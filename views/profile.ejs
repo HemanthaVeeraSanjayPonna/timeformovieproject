@@ -1,0 +1,32 @@
+<%- include("partials/header") -%>
+<center>
+<div class="jumbotron" style="margin:0;padding:10%">
+  <em><h1 style="color:#010a43">Hi, <%=namee%></h1></em>
+  <hr>
+  <br><br>
+  <h2 style="color:#0c9463">Reserved seats waiting for you: </h2>
+<%reserv.forEach(function(i){%>
+  <h3 style="display:inline-block">| Seat <%=i%> | </h3>
+<%})%>
+<% if(reserv.length==0){%>
+  <p style="color:#758184">No seats are currently reserved by you</p>
+  <br>
+  <%}else{%>
+    <br>
+    <a href="/payment"><button type="button" class="btn-lg btn-success" name="button">Pay Now</button></a>.
+    <br><br>
+    <h4 style="color:red">Reserved seats will stay only for a minute, Pay now to get them booked for you</h4>
+    <%}%>
+  <br>
+<hr style="height:0px;width:25%;background-color: #eee;border:0;border-top: dotted 4px;border-color: #cccccc;">
+<br>
+  <h2 style="color:#0f4c75">Your bookings : </h2>
+  <%book.forEach(function(j){%>
+    <h3 style="display:inline-block"> *| Seat <%=j%> |* </h3>
+  <%})%>
+  <% if(book.length==0){%>
+    <h4 style="color:#ef4339">Dont miss the movie....Book tickets ASAP</h4>
+    <%}%>
+  </div>
+  </center>
+<%- include("partials/footer") -%>

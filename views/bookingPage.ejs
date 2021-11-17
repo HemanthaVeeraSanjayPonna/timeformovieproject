@@ -1,0 +1,43 @@
+<%-include("partials/header");-%>
+<div class="jumbotron" style="margin:0;">
+  <div class="container mt-5">
+    <center>
+    <input type="checkbox" disabled>
+    <span> - Blocked seats</span>
+    </center>
+    <br>
+    <form  action="/booking" method="post" style="text-align:center;">
+      <center>
+      <img src="images/screen.png" alt="screen" class="img-fluid " style="display:block;"><br><br>
+        <p style="color:#89CFF0">All eyes on the screen</p>
+      <br>
+      </center>
+      <% booking.forEach(function(seat){ %>
+      <%  var d=" ";%>
+      <%  if(seat.reserved){%>
+      <%    d="disabled" %>
+      <%  }%>
+      <div class="p-2" style="display:inline-block;margin:0.3%;">
+  <input type="checkbox" name="checked" value=<%=seat.seatnumber%> <%=d%>>
+  <label><%=seat.seatnumber%></label>
+</div>
+      <%  if(seat.seatnumber%10==0){%>
+        <%  var d="ABCDEFGHIJKLMNOPQRSTUVWXYZ";%>
+         <span><%=d.charAt((seat.seatnumber/10)-1)%>-<%=seat.seatnumber-9%>to<%=seat.seatnumber%></span>
+      <hr style="margin:0;">
+        <br>
+    <%  }%>
+    <%  })%>
+    <br><br>
+    <input type="submit" name="BOOK" id="sub" class="btn-lg btn-primary " value="BOOK TICKETS" >
+    </form>
+    <br>
+    <center>
+<p style="color:red;">Reserved seats will stay reserved to your account only for a minute, Pay using sample payment gateway to get them booked ; ) </p>
+      </center>
+    <br>
+
+
+</div>
+</div>
+<%-include("partials/footer");-%>

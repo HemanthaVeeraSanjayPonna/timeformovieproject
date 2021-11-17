@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Payment Gateway</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css">
+  </head>
+<body>
+<center>
+  <br><br><br><br>
+<h1>Payment Gateway</h1>
+  <p style="display:inline-block;">Seats you just reserved are : </p>
+<%  tickets[0].seat.forEach(function(l){%>
+    <span> <%=l%> </span>
+<%  })%>
+<h4>Booking amount for <%=tickets[0].seat.length%> tickets is : <%=tickets[0].price%> </h4><br>
+<form action="/payment" method="post">
+<input type="text" name="amountUser" placeholder="Enter Amount To Pay" required><br><br>
+<button type="submit" name="button" class="btn-lg btn-info">Pay</button>
+</form>
+
+</center>
+</body>
+</html>

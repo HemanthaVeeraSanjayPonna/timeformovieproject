@@ -1,0 +1,25 @@
+.a{
+  color: yellow;
+}
+.jumbotron{
+ background-image: url(‘path/image.jpg’);
+ background-size: cover;
+ background-repeat: no-repeat;
+}
+
+.falc{
+  max-width: 40%;
+}
+.navbar-nav > li{
+  padding-left:10px;
+  padding-right:10px;
+}
+.mt-5{
+  margin-top:0;
+}
+input[type=checkbox][disabled]{
+  outline:1px solid red;
+  color:#666 !important;
+  background-color:red;
+   opacity: .3;
+}
